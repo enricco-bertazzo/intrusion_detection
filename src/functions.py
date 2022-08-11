@@ -220,6 +220,179 @@ def add_weight(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP
                 count += 1
 
 
+def sum_weight(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC, HTTP, FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM):
+    pass
+    sum_periods = []
+    sum_periods = pd.DataFrame(sum_periods)
+
+    sum_weight = []
+    sum_weight = pd.DataFrame(sum_weight)
+
+    protocol = ['LLC', 'CDP', 'RIPV2', 'LOOP', 'NTP', 'DNS', 'TCP', 'FINGER', 'SMTP', 'SMTP_IMF', 'ARP', 'ICMP', 'IRC',
+                'HTTP', 'FTP', 'FTP_DATA', 'SNMP', 'LLAP', 'TELNET', 'TIME', 'SSHV1', 'POP', 'NBNS', 'SMTP_IMF_IMF', 'GTP', 'TPM']
+    for i in protocol:
+        if i == 'LLC':
+            total = LLC.iloc[:, 3].sum()
+            sum_periods.insert(0, 'LLC', [total])
+
+            total_weight = LLC.iloc[:, 4].sum()
+            sum_weight.insert(0, 'LLC', [total_weight])
+        if i == 'CDP':
+            total = CDP.iloc[:, 3].sum()
+            sum_periods.insert(1, 'CDP', [total])
+
+            total_weight = CDP.iloc[:, 4].sum()
+            sum_weight.insert(1, 'CDP', [total_weight])
+        if i == 'RIPV2':
+            total = RIPV2.iloc[:, 3].sum()
+            sum_periods.insert(2, 'RIPV2', [total])
+
+            total_weight = RIPV2.iloc[:, 4].sum()
+            sum_weight.insert(2, 'RIPV2', [total_weight])
+        if i == 'LOOP':
+            total = LOOP.iloc[:, 3].sum()
+            sum_periods.insert(3, 'LOOP', [total])
+
+            total_weight = LOOP.iloc[:, 4].sum()
+            sum_weight.insert(3, 'LOOP', [total_weight])
+        if i == 'NTP':
+            total = NTP.iloc[:, 3].sum()
+            sum_periods.insert(4, 'NTP', [total])
+
+            total_weight = NTP.iloc[:, 4].sum()
+            sum_weight.insert(4, 'NTP', [total_weight])
+        if i == 'DNS':
+            total = DNS.iloc[:, 3].sum()
+            sum_periods.insert(5, 'DNS', [total])
+
+            total_weight = DNS.iloc[:, 4].sum()
+            sum_weight.insert(5, 'DNS', [total_weight])
+        if i == 'TCP':
+            total = TCP.iloc[:, 3].sum()
+            sum_periods.insert(6, 'TCP', [total])
+
+            total_weight = TCP.iloc[:, 4].sum()
+            sum_weight.insert(6, 'TCP', [total_weight])
+        if i == 'FINGER':
+            total = FINGER.iloc[:, 3].sum()
+            sum_periods.insert(7, 'FINGER', [total])
+
+            total_weight = FINGER.iloc[:, 4].sum()
+            sum_weight.insert(7, 'FINGER', [total_weight])
+        if i == 'SMTP':
+            total = SMTP.iloc[:, 3].sum()
+            sum_periods.insert(8, 'SMTP', [total])
+
+            total_weight = SMTP.iloc[:, 4].sum()
+            sum_weight.insert(8, 'SMTP', [total_weight])
+        if i == 'SMTP_IMF':
+            total = SMTP_IMF.iloc[:, 3].sum()
+            sum_periods.insert(9, 'SMTP_IMF', [total])
+
+            total_weight = SMTP_IMF.iloc[:, 4].sum()
+            sum_weight.insert(9, 'SMTP_IMF', [total_weight])
+        if i == 'ARP':
+            total = ARP.iloc[:, 3].sum()
+            sum_periods.insert(10, 'ARP', [total])
+
+            total_weight = ARP.iloc[:, 4].sum()
+            sum_weight.insert(10, 'ARP', [total_weight])
+        if i == 'ICMP':
+            total = ICMP.iloc[:, 3].sum()
+            sum_periods.insert(11, 'ICMP', [total])
+
+            total_weight = ICMP.iloc[:, 4].sum()
+            sum_weight.insert(11, 'ICMP', [total_weight])
+        if i == 'IRC':
+            total = IRC.iloc[:, 3].sum()
+            sum_periods.insert(12, 'IRC', [total])
+
+            total_weight = IRC.iloc[:, 4].sum()
+            sum_weight.insert(12, 'IRC', [total_weight])
+        if i == 'HTTP':
+            total = HTTP.iloc[:, 3].sum()
+            sum_periods.insert(13, 'HTTP', [total])
+
+            total_weight = HTTP.iloc[:, 4].sum()
+            sum_weight.insert(13, 'HTTP', [total_weight])
+        if i == 'FTP':
+            total = FTP.iloc[:, 3].sum()
+            sum_periods.insert(14, 'FTP', [total])
+
+            total_weight = FTP.iloc[:, 4].sum()
+            sum_weight.insert(14, 'FTP', [total_weight])
+        if i == 'FTP_DATA':
+            total = FTP_DATA.iloc[:, 3].sum()
+            sum_periods.insert(15, 'FTP_DATA', [total])
+
+            total_weight = FTP_DATA.iloc[:, 4].sum()
+            sum_weight.insert(15, 'FTP_DATA', [total_weight])
+        if i == 'SNMP':
+            total = SNMP.iloc[:, 3].sum()
+            sum_periods.insert(16, 'SNMP', [total])
+
+            total_weight = SNMP.iloc[:, 4].sum()
+            sum_weight.insert(16, 'SNMP', [total_weight])
+        if i == 'LLAP':
+            total = LLAP.iloc[:, 3].sum()
+            sum_periods.insert(17, 'LLAP', [total])
+
+            total_weight = LLAP.iloc[:, 4].sum()
+            sum_weight.insert(17, 'LLAP', [total_weight])
+        if i == 'TELNET':
+            total = TELNET.iloc[:, 3].sum()
+            sum_periods.insert(18, 'TELNET', [total])
+
+            total_weight = TELNET.iloc[:, 4].sum()
+            sum_weight.insert(18, 'TELNET', [total_weight])
+        if i == 'TIME':
+            total = TIME.iloc[:, 3].sum()
+            sum_periods.insert(19, 'TIME', [total])
+
+            total_weight = TIME.iloc[:, 4].sum()
+            sum_weight.insert(19, 'TIME', [total_weight])
+        if i == 'SSHV1':
+            total = SSHV1.iloc[:, 3].sum()
+            sum_periods.insert(20, 'SSHV1', [total])
+
+            total_weight = SSHV1.iloc[:, 4].sum()
+            sum_weight.insert(20, 'SSHV1', [total_weight])
+        if i == 'POP':
+            total = POP.iloc[:, 3].sum()
+            sum_periods.insert(21, 'POP', [total])
+
+            total_weight = POP.iloc[:, 4].sum()
+            sum_weight.insert(12, 'POP', [total_weight])
+        if i == 'NBNS':
+            total = NBNS.iloc[:, 3].sum()
+            sum_periods.insert(22, 'NBNS', [total])
+
+            total_weight = NBNS.iloc[:, 4].sum()
+            sum_weight.insert(22, 'NBNS', [total_weight])
+        if i == 'SMTP_IMF_IMF':
+            total = SMTP_IMF_IMF.iloc[:, 3].sum()
+            sum_periods.insert(23, 'SMTP_IMF_IMF', [total])
+
+            total_weight = SMTP_IMF_IMF.iloc[:, 4].sum()
+            sum_weight.insert(23, 'SMTP_IMF_IMF', [total_weight])
+        if i == 'GTP':
+            total = GTP.iloc[:, 3].sum()
+            sum_periods.insert(24, 'GTP', [total])
+
+            total_weight = GTP.iloc[:, 4].sum()
+            sum_weight.insert(24, 'GTP', [total_weight])
+        if i == 'TPM':
+            total = TPM.iloc[:, 3].sum()
+            sum_periods.insert(25, 'TPM', [total])
+
+            total_weight = TPM.iloc[:, 4].sum()
+            sum_weight.insert(25, 'TPM', [total_weight])
+
+    sum_periods.to_csv("public/sum_periods.csv", sep=",", index=False)
+
+    sum_weight.to_csv("public/sum_weight.csv", sep=",", index=False)
+
+
 def check_empty(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC, HTTP, FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM):
 
     empty = ['Time', 'Protocol', 'Length', 'Weight', 'Multiplication']
@@ -492,3 +665,180 @@ def apply_multi(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, AR
                 weight = TPM.iloc[j, 3]
                 result = length * weight
                 TPM.iloc[j, 4] = result
+        elif i == 'TCP':
+            for j in range(0, len(TCP)):
+                length = TCP.iloc[j, 2]
+                weight = TCP.iloc[j, 3]
+                result = length * weight
+                TCP.iloc[j, 4] = result
+
+
+def division_weight():
+    protocol = ['LLC', 'CDP', 'RIPV2', 'LOOP', 'NTP', 'DNS', 'TCP', 'FINGER', 'SMTP', 'SMTP_IMF', 'ARP', 'ICMP', 'IRC',
+                'HTTP', 'FTP', 'FTP_DATA', 'SNMP', 'LLAP', 'TELNET', 'TIME', 'SSHV1', 'POP', 'NBNS', 'SMTP_IMF_IMF', 'GTP', 'TPM']
+
+    sum_weight = pd.read_csv('Public/sum_weight.csv')
+
+    sum_periods = pd.read_csv('Public/sum_periods.csv')
+
+    division_weight = []
+    division_weight = pd.DataFrame(division_weight)
+
+    for i in protocol:
+        if i == "LLC":
+            LLC_weight = sum_weight.iloc[:, 0]
+            LLC_periods = sum_periods.iloc[:, 0]
+            division = LLC_periods / LLC_weight
+            division_weight.insert(0, 'LLC', division)
+
+        elif i == "CDP":
+            CDP_weight = sum_weight.iloc[:, 1]
+            CDP_periods = sum_periods.iloc[:, 1]
+            division = CDP_periods / CDP_weight
+            division_weight.insert(1, 'CDP', division)
+
+        elif i == "RIPV2":
+            RIPV2_weight = sum_weight.iloc[:, 2]
+            RIPV2_periods = sum_periods.iloc[:, 2]
+            division = RIPV2_periods / RIPV2_weight
+            division_weight.insert(2, 'RIPV2', division)
+
+        elif i == "LOOP":
+            LOOP_weight = sum_weight.iloc[:, 3]
+            LOOP_periods = sum_periods.iloc[:, 3]
+            division = LOOP_periods / LOOP_weight
+            division_weight.insert(3, 'LOOP', division)
+
+        elif i == "NTP":
+            NTP_weight = sum_weight.iloc[:, 4]
+            NTP_periods = sum_periods.iloc[:, 4]
+            division = NTP_periods / NTP_weight
+            division_weight.insert(4, 'NTP', division)
+
+        elif i == "DNS":
+            DNS_weight = sum_weight.iloc[:, 5]
+            DNS_periods = sum_periods.iloc[:, 5]
+            division = DNS_periods / DNS_weight
+            division_weight.insert(5, 'DNS', division)
+
+        elif i == "TCP":
+            TCP_weight = sum_weight.iloc[:, 6]
+            TCP_periods = sum_periods.iloc[:, 6]
+            division = TCP_periods / TCP_weight
+            division_weight.insert(6, 'TCP', division)
+
+        elif i == "FINGER":
+            FINGER_weight = sum_weight.iloc[:, 7]
+            FINGER_periods = sum_periods.iloc[:, 7]
+            division = FINGER_periods / FINGER_weight
+            division_weight.insert(7, 'FINGER', division)
+
+        elif i == "SMTP":
+            SMTP_weight = sum_weight.iloc[:, 8]
+            SMTP_periods = sum_periods.iloc[:, 8]
+            division = SMTP_periods / SMTP_weight
+            division_weight.insert(8, 'SMTP', division)
+
+        elif i == "SMTP_IMF":
+            SMTP_IMF_weight = sum_weight.iloc[:, 9]
+            SMTP_IMF_periods = sum_periods.iloc[:, 9]
+            division = SMTP_IMF_periods / SMTP_IMF_weight
+            division_weight.insert(9, 'SMTP_IMF', division)
+
+        elif i == "ARP":
+            ARP_weight = sum_weight.iloc[:, 10]
+            ARP_periods = sum_periods.iloc[:, 10]
+            division = ARP_periods / ARP_weight
+            division_weight.insert(10, 'ARP', division)
+
+        elif i == "ICMP":
+            ICMP_weight = sum_weight.iloc[:, 11]
+            ICMP_periods = sum_periods.iloc[:, 11]
+            division = ICMP_periods / ICMP_weight
+            division_weight.insert(11, 'ICMP', division)
+
+        elif i == "IRC":
+            IRC_weight = sum_weight.iloc[:, 12]
+            IRC_periods = sum_periods.iloc[:, 12]
+            division = IRC_periods / IRC_weight
+            division_weight.insert(12, 'IRC', division)
+
+        elif i == "HTTP":
+            HTTP_weight = sum_weight.iloc[:, 13]
+            HTTP_periods = sum_periods.iloc[:, 13]
+            division = HTTP_periods / HTTP_weight
+            division_weight.insert(13, 'HTTP', division)
+
+        elif i == "FTP":
+            FTP_weight = sum_weight.iloc[:, 14]
+            FTP_periods = sum_periods.iloc[:, 14]
+            division = FTP_periods / FTP_weight
+            division_weight.insert(14, 'FTP', division)
+
+        elif i == "FTP_DATA":
+            FTP_DATA_weight = sum_weight.iloc[:, 15]
+            FTP_DATA_periods = sum_periods.iloc[:, 15]
+            division = FTP_DATA_periods / FTP_DATA_weight
+            division_weight.insert(15, 'FTP_DATA', division)
+
+        elif i == "SNMP":
+            SNMP_weight = sum_weight.iloc[:, 16]
+            SNMP_periods = sum_periods.iloc[:, 16]
+            division = SNMP_periods / SNMP_weight
+            division_weight.insert(16, 'SNMP', division)
+
+        elif i == "LLAP":
+            LLAP_weight = sum_weight.iloc[:, 17]
+            LLAP_periods = sum_periods.iloc[:, 17]
+            division = LLAP_periods / LLAP_weight
+            division_weight.insert(17, 'LLAP', division)
+
+        elif i == "TELNET":
+            TELNET_weight = sum_weight.iloc[:, 18]
+            TELNET_periods = sum_periods.iloc[:, 18]
+            division = TELNET_periods / TELNET_weight
+            division_weight.insert(18, 'TELNET', division)
+
+        elif i == "TIME":
+            TIME_weight = sum_weight.iloc[:, 19]
+            TIME_periods = sum_periods.iloc[:, 19]
+            division = TIME_periods / TIME_weight
+            division_weight.insert(0, 'TIME', division)
+
+        elif i == "SSHV1":
+            SSHV1_weight = sum_weight.iloc[:, 20]
+            SSHV1_periods = sum_periods.iloc[:, 20]
+            division = SSHV1_periods / SSHV1_weight
+            division_weight.insert(20, 'SSHV1', division)
+
+        elif i == "POP":
+            POP_weight = sum_weight.iloc[:, 21]
+            POP_periods = sum_periods.iloc[:, 21]
+            division = POP_periods / POP_weight
+            division_weight.insert(21, 'POP', division)
+
+        elif i == "NBNS":
+            NBNS_weight = sum_weight.iloc[:, 22]
+            NBNS_periods = sum_periods.iloc[:, 22]
+            division = NBNS_periods / NBNS_weight
+            division_weight.insert(22, 'NBNS', division)
+
+        elif i == "SMTP_IMF_IMF":
+            SMTP_IMF_IMF_weight = sum_weight.iloc[:, 23]
+            SMTP_IMF_IMF_periods = sum_periods.iloc[:, 23]
+            division = SMTP_IMF_IMF_periods / SMTP_IMF_IMF_weight
+            division_weight.insert(23, 'SMTP_IMF_IMF', division)
+
+        elif i == "GTP":
+            GTP_weight = sum_weight.iloc[:, 24]
+            GTP_periods = sum_periods.iloc[:, 24]
+            division = GTP_periods / GTP_weight
+            division_weight.insert(24, 'GTP', division)
+
+        elif i == "TPM":
+            TPM_weight = sum_weight.iloc[:, 25]
+            TPM_periods = sum_periods.iloc[:, 25]
+            division = TPM_periods / TPM_weight
+            division_weight.insert(25, 'TPM', division)
+
+    division_weight.to_csv("Public/division_weight.csv", sep=",", index=False)

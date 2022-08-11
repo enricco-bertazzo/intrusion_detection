@@ -1,5 +1,5 @@
 import pandas as pd
-from functions import add_weight, save, apply_multi
+from functions import add_weight, save, apply_multi, sum_weight, division_weight
 
 LLC = pd.read_csv('./Public/Protocol/LLC.csv')
 CDP = pd.read_csv('./Public/Protocol/CDP.csv')
@@ -28,9 +28,17 @@ SMTP_IMF_IMF = pd.read_csv('./Public/Protocol/SMTP_IMF_IMF.csv')
 GTP = pd.read_csv('./Public/Protocol/GTP.csv')
 TPM = pd.read_csv('./Public/Protocol/TPM.csv')
 
+
 add_weight(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC, HTTP,
            FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM)
+
 apply_multi(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC,
             HTTP, FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM)
+
+sum_weight(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC, HTTP,
+           FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM)
+
+division_weight()
+
 save(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC, HTTP,
      FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM)
