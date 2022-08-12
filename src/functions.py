@@ -1,4 +1,3 @@
-from multiprocessing.sharedctypes import Value
 import pandas as pd
 
 
@@ -448,7 +447,7 @@ def sum_weight(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP
 
 def check_empty(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC, HTTP, FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM):
 
-    empty = [1, 1, 1, 1, 1, 1]
+    empty = [1, 1, 1, 1, 1, 1, 1]
     protocol = ['LLC', 'CDP', 'RIPV2', 'LOOP', 'NTP', 'DNS', 'TCP', 'FINGER', 'SMTP', 'SMTP_IMF', 'ARP', 'ICMP', 'IRC',
                 'HTTP', 'FTP', 'FTP_DATA', 'SNMP', 'LLAP', 'TELNET', 'TIME', 'SSHV1', 'POP', 'NBNS', 'SMTP_IMF_IMF', 'GTP', 'TPM']
 
@@ -509,83 +508,83 @@ def check_empty(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, AR
 
 def save(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, ARP, ICMP, IRC, HTTP, FTP, FTP_DATA, SNMP, LLAP, TELNET, TIME, SSHV1, POP, NBNS, SMTP_IMF_IMF, GTP, TPM):
     LLC = pd.DataFrame(LLC, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     LLC.to_csv("Public/Protocol/LLC.csv", sep=",", index=False)
     CDP = pd.DataFrame(CDP, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     CDP.to_csv("Public/Protocol/CDP.csv", sep=",", index=False)
     RIPV2 = pd.DataFrame(RIPV2, columns=[
-                         'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                         'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     RIPV2.to_csv("Public/Protocol/RIPv2.csv", sep=",", index=False)
     LOOP = pd.DataFrame(LOOP, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     LOOP.to_csv("Public/Protocol/LOOP.csv", sep=",", index=False)
     NTP = pd.DataFrame(NTP, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     NTP.to_csv("Public/Protocol/NTP.csv", sep=",", index=False)
     DNS = pd.DataFrame(DNS, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     DNS.to_csv("Public/Protocol/DNS.csv", sep=",", index=False)
     TCP = pd.DataFrame(TCP, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     TCP.to_csv("Public/Protocol/TCP.csv", sep=",", index=False)
     FINGER = pd.DataFrame(FINGER, columns=[
-                          'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                          'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     FINGER.to_csv("Public/Protocol/FINGER.csv", sep=",", index=False)
     SMTP = pd.DataFrame(SMTP, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     SMTP.to_csv("Public/Protocol/SMTP.csv", sep=",", index=False)
     SMTP_IMF = pd.DataFrame(SMTP_IMF, columns=[
-                            'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                            'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     SMTP_IMF.to_csv("Public/Protocol/SMTP_IMF.csv", sep=",", index=False)
     ARP = pd.DataFrame(ARP, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     ARP.to_csv("Public/Protocol/ARP.csv", sep=",", index=False)
     ICMP = pd.DataFrame(ICMP, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     ICMP.to_csv("Public/Protocol/ICMP.csv", sep=",", index=False)
     IRC = pd.DataFrame(IRC, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     IRC.to_csv("Public/Protocol/IRC.csv", sep=",", index=False)
     HTTP = pd.DataFrame(HTTP, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     HTTP.to_csv("Public/Protocol/HTTP.csv", sep=",", index=False)
     FTP = pd.DataFrame(FTP, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     FTP.to_csv("Public/Protocol/FTP.csv", sep=",", index=False)
     FTP_DATA = pd.DataFrame(FTP_DATA, columns=[
-                            'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                            'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     FTP_DATA.to_csv("Public/Protocol/FTP_DATA.csv", sep=",", index=False)
     SNMP = pd.DataFrame(SNMP, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     SNMP.to_csv("Public/Protocol/SNMP.csv", sep=",", index=False)
     LLAP = pd.DataFrame(LLAP, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     LLAP.to_csv("Public/Protocol/LLAP.csv", sep=",", index=False)
     TELNET = pd.DataFrame(TELNET, columns=[
-                          'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                          'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     TELNET.to_csv("Public/Protocol/TELNET.csv", sep=",", index=False)
     TIME = pd.DataFrame(TIME, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     TIME.to_csv("Public/Protocol/TIME.csv", sep=",", index=False)
     SSHV1 = pd.DataFrame(SSHV1, columns=[
-                         'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                         'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     SSHV1.to_csv("Public/Protocol/SSHv1.csv", sep=",", index=False)
     POP = pd.DataFrame(POP, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     POP.to_csv("Public/Protocol/POP.csv", sep=",", index=False)
     NBNS = pd.DataFrame(NBNS, columns=[
-                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                        'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     NBNS.to_csv("Public/Protocol/NBNS.csv", sep=",", index=False)
     SMTP_IMF_IMF = pd.DataFrame(SMTP_IMF_IMF, columns=[
-                                'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                                'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     SMTP_IMF_IMF.to_csv("Public/Protocol/SMTP_IMF_IMF.csv",
                         sep=",", index=False)
     GTP = pd.DataFrame(GTP, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     GTP.to_csv("Public/Protocol/GTP.csv", sep=",", index=False)
     TPM = pd.DataFrame(TPM, columns=[
-                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast'])
+                       'Time', 'Protocol', 'Length', 'Weight', 'Multiplication', 'Forecast', 'MAPE'])
     TPM.to_csv("Public/Protocol/TPM.csv", sep=",", index=False)
 
 
@@ -603,160 +602,414 @@ def apply_multi(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, AR
                 result = length * weight
                 value = value + result
                 if count >= 300:
-                    value = value / 300
+                    mape = abs((result - value) / result)
+                    LLC.iloc[j, 6] = mape
                     LLC.iloc[j, 5] = value
+                    value = value / 300
                     value = value - (LLC.iloc[(j-300), 4])
                 count = count + 1
                 LLC.iloc[j, 4] = result
+
         elif i == 'CDP':
+            value = 0
+            count = 1
             for j in range(0, len(CDP)):
                 length = CDP.iloc[j, 2]
                 weight = CDP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    CDP.iloc[j, 6] = mape
+                    CDP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (CDP.iloc[(j-300), 4])
+                count = count + 1
                 CDP.iloc[j, 4] = result
+
         elif i == 'RIPV2':
+            value = 0
+            count = 1
             for j in range(0, len(RIPV2)):
                 length = RIPV2.iloc[j, 2]
                 weight = RIPV2.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    RIPV2.iloc[j, 6] = mape
+                    RIPV2.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (RIPV2.iloc[(j-300), 4])
+                count = count + 1
                 RIPV2.iloc[j, 4] = result
+
         elif i == 'LOOP':
+            value = 0
+            count = 1
             for j in range(0, len(LOOP)):
                 length = LOOP.iloc[j, 2]
                 weight = LOOP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    LOOP.iloc[j, 6] = mape
+                    LOOP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (LOOP.iloc[(j-300), 4])
                 LOOP.iloc[j, 4] = result
+
         elif i == 'NTP':
+            value = 0
+            count = 1
             for j in range(0, len(NTP)):
                 length = NTP.iloc[j, 2]
                 weight = NTP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    NTP.iloc[j, 6] = mape
+                    NTP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (NTP.iloc[(j-300), 4])
                 NTP.iloc[j, 4] = result
+
         elif i == 'DNS':
+            value = 0
+            count = 1
             for j in range(0, len(DNS)):
                 length = DNS.iloc[j, 2]
                 weight = DNS.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    DNS.iloc[j, 6] = mape
+                    DNS.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (DNS.iloc[(j-300), 4])
                 DNS.iloc[j, 4] = result
+
         elif i == 'FINGER':
+            value = 0
+            count = 1
             for j in range(0, len(FINGER)):
                 length = FINGER.iloc[j, 2]
                 weight = FINGER.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    FINGER.iloc[j, 6] = mape
+                    FINGER.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (FINGER.iloc[(j-300), 4])
                 FINGER.iloc[j, 4] = result
+
         elif i == 'SMTP':
+            value = 0
+            count = 1
             for j in range(0, len(SMTP)):
                 length = SMTP.iloc[j, 2]
                 weight = SMTP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    SMTP.iloc[j, 6] = mape
+                    SMTP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (SMTP.iloc[(j-300), 4])
                 SMTP.iloc[j, 4] = result
+
         elif i == 'SMTP_IMF':
+            value = 0
+            count = 1
             for j in range(0, len(SMTP_IMF)):
                 length = SMTP_IMF.iloc[j, 2]
                 weight = SMTP_IMF.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    SMTP_IMF.iloc[j, 6] = mape
+                    SMTP_IMF.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (SMTP_IMF.iloc[(j-300), 4])
                 SMTP_IMF.iloc[j, 4] = result
+
         elif i == 'ARP':
+            value = 0
+            count = 1
             for j in range(0, len(ARP)):
                 length = ARP.iloc[j, 2]
                 weight = ARP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    ARP.iloc[j, 6] = mape
+                    ARP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (ARP.iloc[(j-300), 4])
                 ARP.iloc[j, 4] = result
+
         elif i == 'ICMP':
+            value = 0
+            count = 1
             for j in range(0, len(ICMP)):
                 length = ICMP.iloc[j, 2]
                 weight = ICMP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    ICMP.iloc[j, 6] = mape
+                    ICMP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (ICMP.iloc[(j-300), 4])
                 ICMP.iloc[j, 4] = result
+
         elif i == 'IRC':
+            value = 0
+            count = 1
             for j in range(0, len(IRC)):
                 length = IRC.iloc[j, 2]
                 weight = IRC.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    IRC.iloc[j, 6] = mape
+                    IRC.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (IRC.iloc[(j-300), 4])
                 IRC.iloc[j, 4] = result
+
         elif i == 'HTTP':
+            value = 0
+            count = 1
             for j in range(0, len(HTTP)):
                 length = HTTP.iloc[j, 2]
                 weight = HTTP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    HTTP.iloc[j, 6] = mape
+                    HTTP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (HTTP.iloc[(j-300), 4])
                 HTTP.iloc[j, 4] = result
+
         elif i == 'FTP':
+            value = 0
+            count = 1
             for j in range(0, len(FTP)):
                 length = FTP.iloc[j, 2]
                 weight = FTP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    FTP.iloc[j, 6] = mape
+                    FTP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (FTP.iloc[(j-300), 4])
                 FTP.iloc[j, 4] = result
+
         elif i == 'FTP_DATA':
+            value = 0
+            count = 1
             for j in range(0, len(FTP_DATA)):
                 length = FTP_DATA.iloc[j, 2]
                 weight = FTP_DATA.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    FTP_DATA.iloc[j, 6] = mape
+                    FTP_DATA.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (FTP_DATA.iloc[(j-300), 4])
                 FTP_DATA.iloc[j, 4] = result
+
         elif i == 'SNMP':
+            value = 0
+            count = 1
             for j in range(0, len(SNMP)):
                 length = SNMP.iloc[j, 2]
                 weight = SNMP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    SNMP.iloc[j, 6] = mape
+                    SNMP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (SNMP.iloc[(j-300), 4])
                 SNMP.iloc[j, 4] = result
+
         elif i == 'LLAP':
+            value = 0
+            count = 1
             for j in range(0, len(LLAP)):
                 length = LLAP.iloc[j, 2]
                 weight = LLAP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    LLAP.iloc[j, 6] = mape
+                    LLAP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (LLAP.iloc[(j-300), 4])
                 LLAP.iloc[j, 4] = result
+
         elif i == 'TELNET':
+            value = 0
+            count = 1
             for j in range(0, len(TELNET)):
                 length = TELNET.iloc[j, 2]
                 weight = TELNET.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    TELNET.iloc[j, 6] = mape
+                    TELNET.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (TELNET.iloc[(j-300), 4])
                 TELNET.iloc[j, 4] = result
+
         elif i == 'TIME':
+            value = 0
+            count = 1
             for j in range(0, len(TIME)):
                 length = TIME.iloc[j, 2]
                 weight = TIME.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    TIME.iloc[j, 6] = mape
+                    TIME.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (TIME.iloc[(j-300), 4])
                 TIME.iloc[j, 4] = result
+
         elif i == 'SSHV1':
+            value = 0
+            count = 1
             for j in range(0, len(SSHV1)):
                 length = SSHV1.iloc[j, 2]
                 weight = SSHV1.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    SSHV1.iloc[j, 6] = mape
+                    SSHV1.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (SSHV1.iloc[(j-300), 4])
                 SSHV1.iloc[j, 4] = result
+
         elif i == 'POP':
+            value = 0
+            count = 1
             for j in range(0, len(POP)):
                 length = POP.iloc[j, 2]
                 weight = POP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    POP.iloc[j, 6] = mape
+                    POP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (POP.iloc[(j-300), 4])
                 POP.iloc[j, 4] = result
+
         elif i == 'NBNS':
+            value = 0
+            count = 1
             for j in range(0, len(NBNS)):
                 length = NBNS.iloc[j, 2]
                 weight = NBNS.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    NBNS.iloc[j, 6] = mape
+                    NBNS.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (NBNS.iloc[(j-300), 4])
                 NBNS.iloc[j, 4] = result
+
         elif i == 'SMTP_IMF_IMF':
+            value = 0
+            count = 1
             for j in range(0, len(SMTP_IMF_IMF)):
                 length = SMTP_IMF_IMF.iloc[j, 2]
                 weight = SMTP_IMF_IMF.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    SMTP_IMF_IMF.iloc[j, 6] = mape
+                    SMTP_IMF_IMF.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (SMTP_IMF_IMF.iloc[(j-300), 4])
                 SMTP_IMF_IMF.iloc[j, 4] = result
+
         elif i == 'GTP':
+            value = 0
+            count = 1
             for j in range(0, len(GTP)):
                 length = GTP.iloc[j, 2]
                 weight = GTP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    GTP.iloc[j, 6] = mape
+                    GTP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (GTP.iloc[(j-300), 4])
                 GTP.iloc[j, 4] = result
+
         elif i == 'TPM':
+            value = 0
+            count = 1
             for j in range(0, len(TPM)):
                 length = TPM.iloc[j, 2]
                 weight = TPM.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    TPM.iloc[j, 6] = mape
+                    TPM.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (TPM.iloc[(j-300), 4])
                 TPM.iloc[j, 4] = result
+
         elif i == 'TCP':
+            value = 0
+            count = 1
             for j in range(0, len(TCP)):
                 length = TCP.iloc[j, 2]
                 weight = TCP.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    mape = abs((result - value) / result)
+                    TCP.iloc[j, 6] = mape
+                    TCP.iloc[j, 5] = value
+                    value = value / 300
+                    value = value - (TCP.iloc[(j-300), 4])
                 TCP.iloc[j, 4] = result
 
 
