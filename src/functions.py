@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 import pandas as pd
 
 
@@ -457,7 +458,7 @@ def check_empty(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, AR
         elif i == 'CDP' and len(CDP) == 0:
             CDP.append(empty)
         elif i == 'RIPV2' and len(RIPV2) == 0:
-            RIPV2 .append(empty)
+            RIPV2.append(empty)
         elif i == 'LOOP' and len(LOOP) == 0:
             LOOP.append(empty)
         elif i == 'NTP' and len(NTP) == 0:
@@ -469,29 +470,29 @@ def check_empty(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, AR
         elif i == 'FINGER' and len(FINGER) == 0:
             FINGER.append(empty)
         elif i == 'SMTP' and len(SMTP) == 0:
-            SMTP .append(empty)
+            SMTP.append(empty)
         elif i == 'SMTP_IMF' and len(SMTP_IMF) == 0:
             SMTP_IMF.append(empty)
         elif i == 'ARP' and len(ARP) == 0:
             ARP.append(empty)
         elif i == 'ICMP' and len(ICMP) == 0:
-            ICMP .append(empty)
+            ICMP.append(empty)
         elif i == 'IRC' and len(IRC) == 0:
             IRC.append(empty)
         elif i == 'HTTP' and len(HTTP) == 0:
-            HTTP .append(empty)
+            HTTP.append(empty)
         elif i == 'FTP' and len(FTP) == 0:
             FTP.append(empty)
         elif i == 'FTP_DATA' and len(FTP_DATA) == 0:
             FTP_DATA.append(empty)
         elif i == 'SNMP' and len(SNMP) == 0:
-            SNMP .append(empty)
+            SNMP.append(empty)
         elif i == 'LLAP' and len(LLAP) == 0:
             LLAP.append(empty)
         elif i == 'TELNET' and len(TELNET) == 0:
             TELNET.append(empty)
         elif i == 'TIME' and len(TIME) == 0:
-            TIME .append(empty)
+            TIME.append(empty)
         elif i == 'SSHV1' and len(SSHV1) == 0:
             SSHV1.append(empty)
         elif i == 'POP' and len(POP) == 0:
@@ -594,10 +595,18 @@ def apply_multi(LLC, CDP, RIPV2, LOOP, NTP, DNS, TCP, FINGER, SMTP, SMTP_IMF, AR
 
     for i in protocol:
         if i == 'LLC':
+            value = 0
+            count = 1
             for j in range(0, len(LLC)):
                 length = LLC.iloc[j, 2]
                 weight = LLC.iloc[j, 3]
                 result = length * weight
+                value = value + result
+                if count >= 300:
+                    value = value / 300
+                    LLC.iloc[j, 5] = value
+                    value = value - (LLC.iloc[(j-300), 4])
+                count = count + 1
                 LLC.iloc[j, 4] = result
         elif i == 'CDP':
             for j in range(0, len(CDP)):
